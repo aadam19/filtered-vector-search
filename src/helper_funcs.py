@@ -169,9 +169,35 @@ def generate_query_ranges(vecs, attr, queries, k=50, margin=10, seed=0):
             neg_ranges.append((domain_min, domain_max))
     
     return pos_ranges, neg_ranges
-       
 
+def compute_cluster_stats(fitted_vecs, vecs, attr, td):
+    centroids = fitted_vecs.cluster_centers_
+    histograms, cdfs = [], []
+    
+    for cluster_id, centroid in enumerate(centroids):
+        # 1. Get points assigned to this cluster
+        cluster_idx = np.where(fitted_vecs.labels_ == cluster_id)[0]
+        cluster_points = vecs[cluster_idx]
+        cluster_attrs = attr[cluster_idx]  # your attribute values
         
+        # 2. Compute distances from centroid
+        distances = np.linalg.norm(cluster_points - centroid, axis=1)
         
+        # 3. Determine cluster radius and include neighbors slightly outside
+        cluster_radius = distances.max()
+        threshold = cluster_radius * td
+        selected_idx = cluster_idx[distances <= threshold]
         
+        selected_attrs = attr[selected_idx]
+
+        # 4. Compute histogram
+        hist, bin_edges = np.histogram(selected_attrs, bins='auto')        
         
+        # 5. Compute CDF
+        cdf = np.cumsum(hist)
+        cdf = cdf / cdf[-1]
+        
+        histograms.append((hist, bin_edges))
+        cdfs.append(cdf)        
+    return histograms, cdfs
+            
