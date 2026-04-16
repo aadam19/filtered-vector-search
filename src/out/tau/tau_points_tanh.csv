@@ -1,0 +1,5 @@
+source,selectivity,tau,accuracy,balanced_accuracy,macro_f1
+out/experiment8/tau/tau_estimation_0p001_summary.csv,0.001,0.0312732430392051,0.8333333333333334,0.8333333333333334,0.8151075977162935
+out/experiment7/tau/tau_estimation_0p01_summary.csv,0.01,0.0860014183578142,0.9666666666666668,0.9666666666666668,0.9665831244778612
+out/experiment5/tau/tau_estimation_0p1_summary.csv,0.1,0.08871212575665,1.0,1.0,1.0
+out/experiment6/tau/tau_estimation_0p5_summary.csv,0.5,0.027592269665438,1.0,1.0,1.0

@@ -1,0 +1,235 @@
+===== START sel=0.5 Sat Apr 11 06:09:17 PM CDT 2026 =====
+Output directory created at: out/experiment4
+Dimensions of base: (1000000, 128)    Type: float32
+Dimensions of query: (10000, 128)    Type: float32
+Dimensions of truth: (10000, 100)    Type: int32
+Loading pre-computed kmeans_rbf_anchor_v4 attributes from /tmp/fvs_cache...
+Building global exact FAISS index...
+Sampling data for neighbor stats...
+Average attribute diff with neighbors: 6.67097
+Running PCA and plotting correlated attributes...
+Saved attribute PCA pair plot to: out/experiment4/correlated_attr_pca_pair.png
+Saved attribute stats plot to: out/experiment4/correlated_attr_stats.png
+Loading pre-computed random attributes from /tmp/fvs_cache...
+Average attribute diff with neighbors: 60.21367
+Running PCA and plotting random attributes...
+Saved attribute PCA pair plot to: out/experiment4/random_attr_pca_pair.png
+Saved attribute stats plot to: out/experiment4/random_attr_stats.png
+Generating exact query ranges...
+Top-100 neighbor interval overlap | positive=0.9974, negative=0.0677, random=0.5055
+       query_id       range     label  top100_overlap
+0             0  (133, 200)  positive            1.00
+1             1  (123, 200)  positive            1.00
+2             2     (0, 86)  positive            1.00
+3             3  (124, 200)  positive            1.00
+4             4     (0, 92)  positive            1.00
+...         ...         ...       ...             ...
+29995      9995   (82, 182)    random            0.39
+29996      9996   (97, 197)    random            0.39
+29997      9997    (9, 109)    random            0.51
+29998      9998   (94, 195)    random            0.48
+29999      9999   (95, 195)    random            0.51
+
+[30000 rows x 4 columns]
+
+Reconstructing clusters from cached labels...
+Computing cluster stats (Correlated)...
+Computing cluster stats (Random)...
+Building HNSW Centroid Index...
+Sorting attributes...
+Computing correlations...
+Query 0:
+    Positive | Heuristic Corr: 0.5134727540826185     Tanh Corr: 0.20228369526516105     PGap Corr: 0.12757212074727545     JS: 0.5134727540826185    Lift: 0.41646966045408523    True Corr: 0.02607134498072705    E[g_k(R_p)]: 240.22625615577107    g_k(X_p): 233.96323455810546
+    Negative | Heuristic Corr: 0.5134727540826185     Tanh Corr: 0.26636009430455027     PGap Corr: 0.19719875531486897     JS: 0.5134727540826185    Lift: 0.5746176273385591    True Corr: -0.01432601789575892    E[g_k(R_p)]: 240.12726676856465    g_k(X_p): 243.5673342895508
+    Random   | Heuristic Corr: 0.10761222521494597     Tanh Corr: 0.0020927825780096498     PGap Corr: 0.001074229999161952     JS: 0.10761222521494597    Lift: 0.019449894897616813    True Corr: -0.0010526023031745342    E[g_k(R_p)]: 240.13245742727437    g_k(X_p): 240.38522140502928
+
+correlated pos range selectivity: 0.502881
+correlated neg range selectivity: 0.508195
+random range selectivity: 0.507915
+Query 1:
+    Positive | Heuristic Corr: 0.5313487423683956     Tanh Corr: 0.37797875380972595     PGap Corr: 0.26839148962513404     JS: 0.5313487423683956    Lift: 0.8899260415262652    True Corr: 0.06052437566813775    E[g_k(R_p)]: 244.36379225614712    g_k(X_p): 229.5738262939453
+    Negative | Heuristic Corr: -0.5313487423683956     Tanh Corr: -0.5091784049951288     PGap Corr: -0.2244533719726024     JS: 0.5313487423683956    Lift: -1.9243637475565933    True Corr: -0.618705617989976    E[g_k(R_p)]: 238.43182205660048    g_k(X_p): 385.9509298706055
+    Random   | Heuristic Corr: -0.1173744375480438     Tanh Corr: -0.0026727133644385464     PGap Corr: -0.0013419125000401363     JS: 0.1173744375480438    Lift: -0.022774766870366805    True Corr: -0.002082123172435089    E[g_k(R_p)]: 238.58809272178743    g_k(X_p): 239.08486251831056
+
+correlated pos range selectivity: 0.328142
+correlated neg range selectivity: 0.508195
+random range selectivity: 0.502309
+Query 2:
+    Positive | Heuristic Corr: 0.5688173186541832     Tanh Corr: 0.40067942717128346     PGap Corr: 0.2959930980359163     JS: 0.5688173186541832    Lift: 0.8759963463730428    True Corr: 0.04636924521806961    E[g_k(R_p)]: 278.8675381804376    g_k(X_p): 265.9366609191895
+    Negative | Heuristic Corr: -0.5688173186541832     Tanh Corr: -0.5299733274680211     PGap Corr: -0.237303475126042     JS: 0.5688173186541832    Lift: -1.6712060217721434    True Corr: -0.46004115079522373    E[g_k(R_p)]: 275.1593008621035    g_k(X_p): 401.7439022827148
+    Random   | Heuristic Corr: 0.12950877030982447     Tanh Corr: 0.002968762410308871     PGap Corr: 0.0015567670771481185     JS: 0.12950877030982447    Lift: 0.022927270263250216    True Corr: 0.010282398760767732    E[g_k(R_p)]: 274.96892598979434    g_k(X_p): 272.14158584594725
+
+correlated pos range selectivity: 0.375561
+correlated neg range selectivity: 0.500625
+random range selectivity: 0.507894
+Query 3:
+    Positive | Heuristic Corr: 0.5035916607403024     Tanh Corr: 0.31126080290007746     PGap Corr: 0.2221268487508301     JS: 0.5035916607403024    Lift: 0.7218949818682047    True Corr: 0.036993025068652846    E[g_k(R_p)]: 237.69313203498558    g_k(X_p): 228.90014404296875
+    Negative | Heuristic Corr: -0.5035916607403024     Tanh Corr: -0.47724390413533185     PGap Corr: -0.2082621838100516     JS: 0.5035916607403024    Lift: -1.8085108462907278    True Corr: -0.41782113063246823    E[g_k(R_p)]: 235.0149860640012    g_k(X_p): 333.20921325683594
+    Random   | Heuristic Corr: -0.12318599742322707     Tanh Corr: -0.00844089849942976     PGap Corr: -0.0041528012749114255     JS: 0.12318599742322707    Lift: -0.06862911859820738    True Corr: 0.0016371838885457458    E[g_k(R_p)]: 235.02045132284937    g_k(X_p): 234.63567962646485
+
+correlated pos range selectivity: 0.388716
+correlated neg range selectivity: 0.508195
+random range selectivity: 0.507916
+Query 4:
+    Positive | Heuristic Corr: 0.6174400671985578     Tanh Corr: 0.4950350458670222     PGap Corr: 0.3718238775270911     JS: 0.6174400671985578    Lift: 1.1035036251624126    True Corr: 0.06699774973692724    E[g_k(R_p)]: 211.81216311887354    g_k(X_p): 197.62122482299804
+    Negative | Heuristic Corr: -0.6174400671985578     Tanh Corr: -0.5924228668675289     PGap Corr: -0.26148329579164276     JS: 0.6174400671985578    Lift: -1.9393493765031526    True Corr: -0.9626684964501132    E[g_k(R_p)]: 204.65438898638666    g_k(X_p): 401.6687219238281
+    Random   | Heuristic Corr: 0.1183871930388979     Tanh Corr: 0.006319182218423284     PGap Corr: 0.003301570685096888     JS: 0.1183871930388979    Lift: 0.05342802483440894    True Corr: 0.0067130613167704824    E[g_k(R_p)]: 204.76458869448751    g_k(X_p): 203.38999145507813
+
+correlated pos range selectivity: 0.273333
+correlated neg range selectivity: 0.508195
+random range selectivity: 0.502929
+Query 5:
+    Positive | Heuristic Corr: 0.5230217536975417     Tanh Corr: 0.2919342574018626     PGap Corr: 0.21621893638440928     JS: 0.5230217536975417    Lift: 0.6301688635122165    True Corr: 0.02738607587451268    E[g_k(R_p)]: 250.99212097046208    g_k(X_p): 244.11843170166014
+    Negative | Heuristic Corr: -0.5230217536975417     Tanh Corr: -0.4846786348210245     PGap Corr: -0.216305189069761     JS: 0.5230217536975417    Lift: -1.634425544339263    True Corr: -0.18311941053553032    E[g_k(R_p)]: 251.05486991801206    g_k(X_p): 297.0278897094727
+    Random   | Heuristic Corr: -0.12207997685033287     Tanh Corr: -0.006404746238056268     PGap Corr: -0.00317389537237449     JS: 0.12207997685033287    Lift: -0.05251174119125723    True Corr: -0.006287906574499221    E[g_k(R_p)]: 251.01430556245774    g_k(X_p): 252.59266006469727
+
+correlated pos range selectivity: 0.503916
+correlated neg range selectivity: 0.500625
+random range selectivity: 0.50275
+Query 6:
+    Positive | Heuristic Corr: 0.574766581593281     Tanh Corr: 0.3054887882610017     PGap Corr: 0.22905502015225165     JS: 0.574766581593281    Lift: 0.5922342613388233    True Corr: 0.05744834650139989    E[g_k(R_p)]: 172.468982876846    g_k(X_p): 162.56092498779296
+    Negative | Heuristic Corr: -0.574766581593281     Tanh Corr: -0.5010300675296399     PGap Corr: -0.20986299205564177     JS: 0.574766581593281    Lift: -1.340159308356177    True Corr: -0.2436734209857854    E[g_k(R_p)]: 172.4668617303079    g_k(X_p): 214.49245193481445
+    Random   | Heuristic Corr: -0.1162755872270658     Tanh Corr: -0.0026375719199499313     PGap Corr: -0.0013263393514584521     JS: 0.1162755872270658    Lift: -0.02268768977431239    True Corr: -0.0035085999313263813    E[g_k(R_p)]: 172.62502608751163    g_k(X_p): 173.2306982421875
+
+correlated pos range selectivity: 0.508128
+correlated neg range selectivity: 0.508195
+random range selectivity: 0.503229
+Query 7:
+    Positive | Heuristic Corr: 0.5172982747766619     Tanh Corr: 0.2804270300400946     PGap Corr: 0.20634558066230477     JS: 0.5172982747766619    Lift: 0.6071237931400579    True Corr: 0.0288379625157641    E[g_k(R_p)]: 272.46178450716013    g_k(X_p): 264.60454177856445
+    Negative | Heuristic Corr: -0.5172982747766619     Tanh Corr: -0.480389312739598     PGap Corr: -0.21466235298136538     JS: 0.5172982747766619    Lift: -1.6484928967765904    True Corr: -0.07397668380567544    E[g_k(R_p)]: 272.54580526011733    g_k(X_p): 292.7078401184082
+    Random   | Heuristic Corr: 0.12279213076015852     Tanh Corr: 0.0015476166843104708     PGap Corr: 0.000791182045194106     JS: 0.12279213076015852    Lift: 0.01260421680578218    True Corr: 0.004538176423471669    E[g_k(R_p)]: 272.49745466508625    g_k(X_p): 271.2608131408691
+
+correlated pos range selectivity: 0.50427
+correlated neg range selectivity: 0.500625
+random range selectivity: 0.502719
+Query 8:
+    Positive | Heuristic Corr: 0.5309343118966731     Tanh Corr: 0.3163841482576949     PGap Corr: 0.2374470976379895     JS: 0.5309343118966731    Lift: 0.6867665179282463    True Corr: 0.022660832241749237    E[g_k(R_p)]: 247.80523700348397    g_k(X_p): 242.1897640991211
+    Negative | Heuristic Corr: -0.5309343118966731     Tanh Corr: -0.49467731504478274     PGap Corr: -0.22149915824439326     JS: 0.5309343118966731    Lift: -1.6712060217721436    True Corr: -0.23416605721068157    E[g_k(R_p)]: 247.2151469158188    g_k(X_p): 305.10454315185547
+    Random   | Heuristic Corr: -0.09629356376462027     Tanh Corr: -0.002250057794485201     PGap Corr: -0.001130183730687463     JS: 0.09629356376462027    Lift: -0.023370901973123238    True Corr: 0.00041567986973238536    E[g_k(R_p)]: 247.1106179268033    g_k(X_p): 247.00789901733398
+
+correlated pos range selectivity: 0.46333
+correlated neg range selectivity: 0.500625
+random range selectivity: 0.507709
+Query 9:
+    Positive | Heuristic Corr: 0.6319423002982213     Tanh Corr: 0.503296032732791     PGap Corr: 0.37960352684047305     JS: 0.6319423002982213    Lift: 1.0887656834655475    True Corr: 0.08089166741309961    E[g_k(R_p)]: 199.91357858023636    g_k(X_p): 183.74223587036133
+    Negative | Heuristic Corr: -0.6319423002982213     Tanh Corr: -0.6063375040368737     PGap Corr: -0.267624931083379     JS: 0.6319423002982213    Lift: -1.9393493765031526    True Corr: -1.14833630339673    E[g_k(R_p)]: 191.828064259036    g_k(X_p): 412.1111944580078
+    Random   | Heuristic Corr: 0.08608243821800682     Tanh Corr: 0.0008164530354420857     PGap Corr: 0.00041674793052899156     JS: 0.08608243821800682    Lift: 0.009484832626260067    True Corr: -0.001583716955810057    E[g_k(R_p)]: 191.8428139240955    g_k(X_p): 192.1466386413574
+
+correlated pos range selectivity: 0.279168
+correlated neg range selectivity: 0.508195
+random range selectivity: 0.507606
+
+Correlation comparison table:
+ query_id correlation_type  heuristic_correlation  tanh_correlation  pgap_correlation  js_divergence      lift      p_c      p_g  true_correlation  expected_random_gk  admissible_gk  subset_size  k_used
+        0         Positive               0.513473          0.202284          0.127572       0.513473  0.416470 0.729384 0.480934          0.026071          240.226256     233.963235       502881     100
+        0         Negative               0.513473          0.266360          0.197199       0.513473  0.574618 0.878670 0.494621         -0.014326          240.127267     243.567334       508195     100
+        0           Random               0.107612          0.002093          0.001074       0.107612  0.019450 0.518245 0.508262         -0.001053          240.132457     240.385221       507915     100
+        1         Positive               0.531349          0.377979          0.268391       0.531349  0.889926 0.857122 0.352008          0.060524          244.363792     229.573826       328142     100
+        1         Negative              -0.531349         -0.509178         -0.224453       0.531349 -1.924364 0.072199 0.494621         -0.618706          238.431822     385.950930       508195     100
+        1           Random              -0.117374         -0.002673         -0.001342       0.117374 -0.022775 0.496297 0.507730         -0.002082          238.588093     239.084863       502309     100
+        2         Positive               0.568817          0.400679          0.295993       0.568817  0.875996 0.891720 0.371354          0.046369          278.867538     265.936661       375561     100
+        2         Negative              -0.568817         -0.529973         -0.237303       0.568817 -1.671206 0.096603 0.513790         -0.460041          275.159301     401.743902       500625     100
+        2           Random               0.129509          0.002969          0.001557       0.129509  0.022927 0.530324 0.518303          0.010282          274.968926     272.141586       507894     100
+        3         Positive               0.503592          0.311261          0.222127       0.503592  0.721895 0.857860 0.416775          0.036993          237.693132     228.900144       388716     100
+        3         Negative              -0.503592         -0.477244         -0.208262       0.503592 -1.808511 0.081067 0.494621         -0.417821          235.014986     333.209213       508195     100
+        3           Random              -0.123186         -0.008441         -0.004153       0.123186 -0.068629 0.474552 0.508263          0.001637          235.020451     234.635680       507916     100
+        4         Positive               0.617440          0.495035          0.371824       0.617440  1.103504 0.901105 0.298903          0.066998          211.812163     197.621225       273333     100
+        4         Negative              -0.617440         -0.592423         -0.261483       0.617440 -1.939349 0.071125 0.494621         -0.962668          204.654389     401.668722       508195     100
+        4           Random               0.118387          0.006319          0.003302       0.118387  0.053428 0.536040 0.508152          0.006713          204.764589     203.389991       502929     100
+        5         Positive               0.523022          0.291934          0.216219       0.523022  0.630169 0.884289 0.470885          0.027386          250.992121     244.118432       503916     100
+        5         Negative              -0.523022         -0.484679         -0.216305       0.523022 -1.634426 0.100222 0.513790         -0.183119          251.054870     297.027890       500625     100
+        5           Random              -0.122080         -0.006405         -0.003174       0.122080 -0.052512 0.482213 0.508212         -0.006288          251.014306     252.592660       502750     100
+        6         Positive               0.574767          0.305489          0.229055       0.574767  0.592234 0.891720 0.493201          0.057448          172.468983     162.560925       508128     100
+        6         Negative              -0.574767         -0.501030         -0.209863       0.574767 -1.340159 0.129494 0.494621         -0.243673          172.466862     214.492452       508195     100
+        6           Random              -0.116276         -0.002638         -0.001326       0.116276 -0.022688 0.497096 0.508502         -0.003509          172.625026     173.230698       503229     100
+        7         Positive               0.517298          0.280427          0.206346       0.517298  0.607124 0.876521 0.477630          0.028838          272.461785     264.604542       504270     100
+        7         Negative              -0.517298         -0.480389         -0.214662       0.517298 -1.648493 0.098822 0.513790         -0.073977          272.545805     292.707840       500625     100
+        7           Random               0.122792          0.001548          0.000791       0.122792  0.012604 0.514427 0.507984          0.004538          272.497455     271.260813       502719     100
+        8         Positive               0.530934          0.316384          0.237447       0.530934  0.686767 0.900212 0.452987          0.022661          247.805237     242.189764       463330     100
+        8         Negative              -0.530934         -0.494677         -0.221499       0.530934 -1.671206 0.096603 0.513790         -0.234166          247.215147     305.104543       500625     100
+        8           Random              -0.096294         -0.002250         -0.001130       0.096294 -0.023371 0.496354 0.508091          0.000416          247.110618     247.007899       507709     100
+        9         Positive               0.631942          0.503296          0.379604       0.631942  1.088766 0.905520 0.304827          0.080892          199.913579     183.742236       279168     100
+        9         Negative              -0.631942         -0.606338         -0.267625       0.631942 -1.939349 0.071125 0.494621         -1.148336          191.828064     412.111194       508195     100
+        9           Random               0.086082          0.000816          0.000417       0.086082  0.009485 0.512846 0.508005         -0.001584          191.842814     192.146639       507606     100
+Saved correlation comparison CSV to out/experiment4/correlation_comparison_0p5.csv
+Saved correlation comparison Markdown to out/experiment4/correlation_comparison_0p5.md
+
+Correlation classification table:
+   metric      tau actual_class predicted_class  count  metric_accuracy
+heuristic 0.030752     negative        negative      9         0.500000
+heuristic 0.030752     negative          random      0         0.500000
+heuristic 0.030752     negative        positive      0         0.500000
+heuristic 0.030752       random        negative      5         0.500000
+heuristic 0.030752       random          random      0         0.500000
+heuristic 0.030752       random        positive     10         0.500000
+heuristic 0.030752     positive        negative      0         0.500000
+heuristic 0.030752     positive          random      0         0.500000
+heuristic 0.030752     positive        positive      6         0.500000
+     tanh 0.030752     negative        negative      9         0.833333
+     tanh 0.030752     negative          random      0         0.833333
+     tanh 0.030752     negative        positive      0         0.833333
+     tanh 0.030752       random        negative      0         0.833333
+     tanh 0.030752       random          random     10         0.833333
+     tanh 0.030752       random        positive      5         0.833333
+     tanh 0.030752     positive        negative      0         0.833333
+     tanh 0.030752     positive          random      0         0.833333
+     tanh 0.030752     positive        positive      6         0.833333
+     pgap 0.030752     negative        negative      9         0.833333
+     pgap 0.030752     negative          random      0         0.833333
+     pgap 0.030752     negative        positive      0         0.833333
+     pgap 0.030752       random        negative      0         0.833333
+     pgap 0.030752       random          random     10         0.833333
+     pgap 0.030752       random        positive      5         0.833333
+     pgap 0.030752     positive        negative      0         0.833333
+     pgap 0.030752     positive          random      0         0.833333
+     pgap 0.030752     positive        positive      6         0.833333
+Saved correlation classification CSV to out/experiment4/correlation_classification_0p5.csv
+Saved correlation classification matrix CSV to out/experiment4/correlation_classification_matrices_0p5.csv
+Saved correlation classification Markdown to out/experiment4/correlation_classification_0p5.md
+Saved correlation comparison plot to out/experiment4/correlation_comparison_0p5.png
+Building or loading indexes...
+Loading pre-built ACORN indexes from disk...
+Computing or loading ground truths...
+Computing ground truths (this will be fast now)...
+Computing exact ground truths (FAISS grouped by range)...
+Computing exact ground truths (FAISS grouped by range)...
+Computing exact ground truths (FAISS grouped by range)...
+Saving ground truths to disk...
+Running experiments...
+Positive:
+     ACORN: Running...
+         Finished: 9.070231s | QPS: 1102.51 | Recall: 0.8384
+     Post-filter: Running...
+         Finished: 0.634824s | QPS: 15752.40 | Recall: 0.5038
+     Pre-filter: Running...
+         Finished: 69.592700s | QPS: 143.69 | Recall: 0.9999
+Negative:
+     ACORN: Running...
+         Finished: 8.701958s | QPS: 1149.17 | Recall: 0.8506
+     Post-filter: Running...
+         Finished: 16.049500s | QPS: 623.07 | Recall: 0.2608
+     Pre-filter: Running...
+         Finished: 77.681000s | QPS: 128.73 | Recall: 0.9999
+Random:
+     ACORN: Running...
+         Finished: 9.072291s | QPS: 1102.26 | Recall: 0.9224
+     Post-filter: Running...
+         Finished: 0.539149s | QPS: 18547.70 | Recall: 0.4344
+     Pre-filter: Running...
+         Finished: 79.878300s | QPS: 125.19 | Recall: 0.9999
+
+Performance metrics table:
+correlation    strategy   recall          qps    time_s
+   Positive       ACORN 0.838366  1102.507757  9.070231
+   Positive Post-filter 0.503819 15752.400000  0.634824
+   Positive  Pre-filter 0.999879   143.693000 69.592700
+   Negative       ACORN 0.850603  1149.166678  8.701958
+   Negative Post-filter 0.260752   623.074000 16.049500
+   Negative  Pre-filter 0.999862   128.732000 77.681000
+     Random       ACORN 0.922374  1102.257440  9.072291
+     Random Post-filter 0.434424 18547.700000  0.539149
+     Random  Pre-filter 0.999911   125.190000 79.878300
+Saved CSV table to out/experiment4/performance_metrics_0p5.csv
+Saved Markdown table to out/experiment4/performance_metrics_0p5.md
+Saved main plot to out/experiment4/performance_metrics_0p5.png
+===== END sel=0.5 Sat Apr 11 09:20:32 PM CDT 2026 =====
