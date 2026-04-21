@@ -30,11 +30,11 @@ struct SearchConfig {
     std::string output_ids_path;
     int k = 100;
     int pre_ef_search = 4096;
-    int post_ef_search = 1024;
-    int post_max_fetch_k = 32768;
-    int post_max_retries = 7;
-    double post_fetch_mult = 2.5;
-    double post_min_valid_mult = 12.0;
+    int post_ef_search = 512;
+    int post_max_fetch_k = 4096;
+    int post_max_retries = 5;
+    double post_fetch_mult = 2.0;
+    double post_min_valid_mult = 2.0;
 };
 
 struct RunSummary {
@@ -55,11 +55,11 @@ void usage() {
         << "  [--output-ids <ids.i64>]\n"
         << "  [--k 100]\n"
         << "  [--pre-ef-search 4096]\n"
-        << "  [--post-ef-search 1024]\n"
-        << "  [--post-max-fetch-k 32768]\n"
-        << "  [--post-max-retries 7]\n"
-        << "  [--post-fetch-mult 2.5]\n"
-        << "  [--post-min-valid-mult 12.0]\n";
+        << "  [--post-ef-search 512]\n"
+        << "  [--post-max-fetch-k 4096]\n"
+        << "  [--post-max-retries 5]\n"
+        << "  [--post-fetch-mult 2.0]\n"
+        << "  [--post-min-valid-mult 2.0]\n";
 }
 
 int parse_int(const std::string& s, const std::string& name) {

@@ -412,16 +412,7 @@ print(comparison_df.to_string(index=False, float_format=lambda x: f"{x:.6f}"))
 print(f"Saved correlation comparison CSV to {comparison_csv_path}")
 print(f"Saved correlation comparison Markdown to {comparison_md_path}")
 
-def interpolated_tanh_tau(selectivity):
-    log_sel = np.log10(float(selectivity))
-    return (
-        -0.03652986870695888 * (log_sel ** 2)
-        - 0.12008418389936595 * log_sel
-        - 0.0020866309341351086
-    )
-
-
-tau = float(interpolated_tanh_tau(selectivity))
+theoretical_tau = float(interpolated_metric_tau(selectivity, "true"))
 
 def classify_score(score, tau):
     if score > tau:
@@ -436,12 +427,20 @@ metric_columns = [
     ("pgap_correlation", "pgap"),
 ]
 
-comparison_df["theoretical_class"] = comparison_df["true_correlation"].apply(lambda x: classify_score(x, tau))
+metric_tau_map = {
+    metric_name: float(interpolated_metric_tau(selectivity, metric_name))
+    for _, metric_name in metric_columns
+}
+
+comparison_df["theoretical_class"] = comparison_df["true_correlation"].apply(
+    lambda x: classify_score(x, theoretical_tau)
+)
 
 classification_rows = []
 class_order = ["negative", "random", "positive"]
 for metric_col, metric_name in metric_columns:
-    predicted_classes = comparison_df[metric_col].apply(lambda x: classify_score(x, tau))
+    metric_tau = metric_tau_map[metric_name]
+    predicted_classes = comparison_df[metric_col].apply(lambda x: classify_score(x, metric_tau))
     metric_accuracy = float((predicted_classes == comparison_df["theoretical_class"]).mean())
     for actual_class in class_order:
         for predicted_class in class_order:
@@ -454,7 +453,7 @@ for metric_col, metric_name in metric_columns:
             classification_rows.append(
                 {
                     "metric": metric_name,
-                    "tau": tau,
+                    "tau": metric_tau,
                     "actual_class": actual_class,
                     "predicted_class": predicted_class,
                     "count": count,
@@ -470,7 +469,12 @@ for _, metric_name in metric_columns:
     metric_df = classification_df[classification_df["metric"] == metric_name]
     accuracy = metric_df["metric_accuracy"].iloc[0] if not metric_df.empty else float("nan")
     for actual_class in class_order:
-        row = {"metric": metric_name, "tau": tau, "actual_class": actual_class, "metric_accuracy": accuracy}
+        row = {
+            "metric": metric_name,
+            "tau": metric_tau_map[metric_name],
+            "actual_class": actual_class,
+            "metric_accuracy": accuracy,
+        }
         for predicted_class in class_order:
             count = int(
                 metric_df[
@@ -485,7 +489,10 @@ classification_matrix_df = pd.DataFrame(matrix_rows)
 classification_matrix_df.to_csv(classification_matrix_csv_path, index=False)
 
 classification_md_lines = [
-    f"Classification threshold tau = {tau:.2f}",
+    f"Theoretical class tau (true) = {theoretical_tau:.6f}",
+    "",
+    "Metric-specific prediction taus:",
+    *(f"- {metric_name}: {metric_tau_map[metric_name]:.6f}" for _, metric_name in metric_columns),
     "",
 ]
 for _, metric_name in metric_columns:
@@ -494,6 +501,8 @@ for _, metric_name in metric_columns:
     classification_md_lines.extend(
         [
             f"## {metric_name}",
+            f"",
+            f"Tau: {metric_tau_map[metric_name]:.6f}",
             f"",
             f"Accuracy: {accuracy:.4f}",
             "",

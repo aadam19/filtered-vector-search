@@ -23,10 +23,10 @@ struct BuildConfig {
     std::string attr_path;
     std::string out_dir;
     int pre_m = 32;
-    int post_m = 16;
-    int ef_construction = 200;
+    int post_m = 64;
+    int ef_construction = 800;
     int pre_ef_search = 256;
-    int post_ef_search = 128;
+    int post_ef_search = 256;
 };
 
 void usage() {
@@ -36,10 +36,10 @@ void usage() {
         << "  --attr <attr.npy|attr.i32>\n"
         << "  --out-dir <directory>\n"
         << "  [--pre-m 32]\n"
-        << "  [--post-m 16]\n"
-        << "  [--ef-construction 200]\n"
+        << "  [--post-m 64]\n"
+        << "  [--ef-construction 800]\n"
         << "  [--pre-ef-search 256]\n"
-        << "  [--post-ef-search 128]\n";
+        << "  [--post-ef-search 256]\n";
 }
 
 int parse_int(const std::string& s, const std::string& name) {
