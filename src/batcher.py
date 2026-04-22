@@ -31,11 +31,21 @@ from helper_funcs import *
 out_base = Path("test")
 out_base.mkdir(exist_ok=True)
 
+x = 1
+while True:
+    exp_dir = out_base / f"experiment{x}"
+    if not exp_dir.exists():
+        exp_dir.mkdir()
+        break
+    x += 1
+
+out_base = exp_dir
+
 #############################################
 #                CONFIG
 #############################################
 k_center = 10
-k_eval = 10
+k_eval = 100
 ############################################
 #                IMPORTS
 ############################################
@@ -155,7 +165,8 @@ else:
     start = time.perf_counter()
 
     n_queries = len(queries)
-    target_selectivities = rng.uniform(0.01, 0.5, size=n_queries).astype(np.float32)
+    target_selectivities = rng.uniform(0.0001, 0.4, size=n_queries).astype(np.float32)
+    # target_selectivities = np.full(n_queries, 0.1, dtype=np.float32)
 
     actual_selectivities = np.empty(n_queries, dtype=np.float32)
     ranges_all = np.empty((n_queries, 2), dtype=np.int64)
@@ -336,7 +347,7 @@ def _interpolated_metric_tau_array(selectivities, metric):
     )
 
 
-def analyze_queries(queries, ranges, sorted_attr, pre_selectivity_threshold=0.04):
+def analyze_queries(queries, ranges, sorted_attr, pre_selectivity_threshold=0.05):
     queries = np.ascontiguousarray(queries, dtype=np.float32)
     ranges = np.asarray(ranges, dtype=np.int64)
     total_queries = len(queries)
@@ -387,6 +398,8 @@ def analyze_queries(queries, ranges, sorted_attr, pre_selectivity_threshold=0.04
     positive_mask = correlations >= taus
     random_mask = ~(negative_mask | positive_mask)
 
+    # Heuristic planner basically says: if selectivity is very low, use PRE; otherwise route based on correlation type
+    # ACORN when correlation is negative, POST when positive/random
     pre_mask = selectivities < float(pre_selectivity_threshold)
     acorn_mask = (~pre_mask) & negative_mask
     post_mask = (~pre_mask) & (~negative_mask)
@@ -423,7 +436,7 @@ def run_planner(
     sorted_idx,
     gt,
     k_eval,
-    pre_selectivity_threshold=0.04,
+    pre_selectivity_threshold=0.05,
 ):
     queries = np.ascontiguousarray(queries, dtype=np.float32)
     ranges = np.asarray(ranges, dtype=np.int64)
@@ -532,32 +545,173 @@ def run_planner(
     }
 
 
+def build_strategy_report_dataframe(results, planner_results):
+    records = []
+    for item in results:
+        is_planner = item["strategy"] == "PLANNER"
+        plan_counts = planner_results["plan_counts"] if is_planner else {}
+        corr_counts = planner_results["corr_type_counts"] if is_planner else {}
+        records.append(
+            {
+                "strategy": item["strategy"],
+                "total_time_s": float(item["dt"]),
+                "qps": float(item["qps"]),
+                "recall_at_k": float(item["recall"]),
+                "routing_time_s": float(planner_results["routing_dt"]) if is_planner else pd.NA,
+                "execution_time_s": float(planner_results["execution_dt"]) if is_planner else pd.NA,
+                "pre_queries": int(plan_counts.get("PRE", 0)) if is_planner else pd.NA,
+                "post_queries": int(plan_counts.get("POST", 0)) if is_planner else pd.NA,
+                "acorn_queries": int(plan_counts.get("ACORN", 0)) if is_planner else pd.NA,
+                "corr_positive": int(corr_counts.get("positive", 0)) if is_planner else pd.NA,
+                "corr_random": int(corr_counts.get("random", 0)) if is_planner else pd.NA,
+                "corr_negative": int(corr_counts.get("negative", 0)) if is_planner else pd.NA,
+            }
+        )
+
+    columns = [
+        "strategy",
+        "total_time_s",
+        "qps",
+        "recall_at_k",
+        "routing_time_s",
+        "execution_time_s",
+        "pre_queries",
+        "post_queries",
+        "acorn_queries",
+        "corr_positive",
+        "corr_random",
+        "corr_negative",
+    ]
+    return pd.DataFrame.from_records(records, columns=columns)
+
+
+def _markdown_table(headers, rows):
+    header = "| " + " | ".join(headers) + " |"
+    separator = "| " + " | ".join(["---"] * len(headers)) + " |"
+    body = ["| " + " | ".join(row) + " |" for row in rows]
+    return "\n".join([header, separator, *body])
+
+
+def export_strategy_report_csv(results, planner_results, out_path):
+    df = build_strategy_report_dataframe(results, planner_results)
+    df.to_csv(out_path, index=False)
+    print(f"[REPORT] Saved strategy comparison CSV to {out_path}")
+
+
+def export_strategy_report_markdown(
+    results,
+    planner_results,
+    out_path,
+    comparison_plot_path,
+    routing_plot_path,
+    n_queries,
+    k_eval,
+):
+    comparison_rows = []
+    for item in results:
+        is_planner = item["strategy"] == "PLANNER"
+        comparison_rows.append(
+            [
+                item["strategy"],
+                f"{float(item['dt']):.6f}",
+                f"{float(item['qps']):.2f}",
+                f"{float(item['recall']):.4f}",
+                f"{float(planner_results['routing_dt']):.6f}" if is_planner else "",
+                f"{float(planner_results['execution_dt']):.6f}" if is_planner else "",
+            ]
+        )
+
+    routing_rows = [
+        [label, str(int(planner_results["plan_counts"][label]))]
+        for label in ("PRE", "POST", "ACORN")
+    ]
+    corr_rows = [
+        [label, str(int(planner_results["corr_type_counts"][label]))]
+        for label in ("positive", "random", "negative")
+    ]
+
+    lines = [
+        "# Strategy Comparison Report",
+        "",
+        f"- Queries: `{n_queries}`",
+        f"- `k_eval`: `{k_eval}`",
+        "",
+        f"- Comparison plot: `{comparison_plot_path.name}`",
+        f"- Planner routing plot: `{routing_plot_path.name}`",
+        "",
+        "## Strategy Metrics",
+        "",
+        _markdown_table(
+            [
+                "Strategy",
+                "Total Time (s)",
+                "QPS",
+                "Recall@k",
+                "Routing Time (s)",
+                "Execution Time (s)",
+            ],
+            comparison_rows,
+        ),
+        "",
+        "## Planner Routing",
+        "",
+        _markdown_table(["Route", "Queries"], routing_rows),
+        "",
+        "## Planner Correlation Types",
+        "",
+        _markdown_table(["Correlation", "Queries"], corr_rows),
+        "",
+    ]
+
+    out_path.write_text("\n".join(lines), encoding="utf-8")
+    print(f"[REPORT] Saved strategy comparison Markdown to {out_path}")
+
+
 def plot_strategy_comparison(results, out_path):
     strategies = [item["strategy"] for item in results]
     times = [item["dt"] for item in results]
     qps = [item["qps"] for item in results]
     recalls = [item["recall"] for item in results]
 
-    fig, axes = plt.subplots(1, 3, figsize=(14, 4.5))
-    colors = ["#2ca02c", "#d62728", "#1f77b4", "#ff7f0e"]
+    palette = {
+        "PRE": "#2a9d8f",
+        "POST": "#e76f51",
+        "ACORN": "#457b9d",
+        "PLANNER": "#f4a261",
+    }
+    colors = [palette.get(name, "#6c757d") for name in strategies]
 
-    axes[0].bar(strategies, times, color=colors[: len(strategies)])
-    axes[0].set_title("Total Time")
-    axes[0].set_ylabel("Seconds")
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5.25))
+    fig.suptitle("Strategy Comparison", fontsize=15, fontweight="bold")
 
-    axes[1].bar(strategies, qps, color=colors[: len(strategies)])
-    axes[1].set_title("QPS")
-    axes[1].set_ylabel("Queries / second")
+    panels = [
+        ("Total Time", "Seconds", times, "{:.3f}", None),
+        ("QPS", "Queries / second", qps, "{:.1f}", None),
+        ("Recall", "Recall@k", recalls, "{:.4f}", (0.0, 1.05)),
+    ]
 
-    axes[2].bar(strategies, recalls, color=colors[: len(strategies)])
-    axes[2].set_title("Recall")
-    axes[2].set_ylabel("Recall@k")
-    axes[2].set_ylim(0.0, 1.05)
+    for ax, (title, ylabel, values, fmt, ylim) in zip(axes, panels):
+        bars = ax.bar(strategies, values, color=colors, edgecolor="#1f2933", linewidth=0.6)
+        ax.set_title(title)
+        ax.set_ylabel(ylabel)
+        if ylim is not None:
+            ax.set_ylim(*ylim)
+        ax.grid(axis="y", alpha=0.25, linestyle="--", linewidth=0.8)
+        ax.set_axisbelow(True)
 
-    for ax in axes:
-        ax.grid(axis="y", alpha=0.25)
+        y_max = max(values) if values else 0.0
+        text_offset = max(y_max * 0.02, 0.01)
+        for bar, value in zip(bars, values):
+            ax.text(
+                bar.get_x() + bar.get_width() / 2.0,
+                bar.get_height() + text_offset,
+                fmt.format(float(value)),
+                ha="center",
+                va="bottom",
+                fontsize=9,
+            )
 
-    fig.tight_layout()
+    fig.tight_layout(rect=[0, 0.02, 1, 0.95])
     fig.savefig(out_path, dpi=200, bbox_inches="tight")
     plt.close(fig)
     print(f"[PLOT] Saved strategy comparison plot to {out_path}")
@@ -636,5 +790,17 @@ comparison_results = [
 
 comparison_plot_path = out_base / f"strategy_comparison_q{len(queries32)}_topk{k_eval}.png"
 routing_plot_path = out_base / f"planner_routing_q{len(queries32)}_topk{k_eval}.png"
+comparison_csv_path = out_base / f"strategy_comparison_q{len(queries32)}_topk{k_eval}.csv"
+comparison_md_path = out_base / f"strategy_comparison_q{len(queries32)}_topk{k_eval}.md"
 plot_strategy_comparison(comparison_results, comparison_plot_path)
 plot_planner_routing(planner_results, routing_plot_path)
+export_strategy_report_csv(comparison_results, planner_results, comparison_csv_path)
+export_strategy_report_markdown(
+    comparison_results,
+    planner_results,
+    comparison_md_path,
+    comparison_plot_path,
+    routing_plot_path,
+    n_queries=len(queries32),
+    k_eval=k_eval,
+)

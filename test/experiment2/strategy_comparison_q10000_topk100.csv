@@ -1,0 +1,5 @@
+strategy,total_time_s,qps,recall_at_k,routing_time_s,execution_time_s,pre_queries,post_queries,acorn_queries,corr_positive,corr_random,corr_negative
+PRE,42.1757,237.103,0.9998810000000001,,,,,,,,
+POST,12.3358,810.646,0.672412,,,,,,,,
+ACORN,16.331014073221013,612.3318463363292,0.9012700000000001,,,,,,,,
+PLANNER,11.107705300999104,900.2759552056652,0.898014,1.0559585739392787,10.051746727059825,1010,4011,4979,4275,0,5725
