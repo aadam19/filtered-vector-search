@@ -1,0 +1,203 @@
+nohup: ignoring input
+[LOAD] Loading cached random attributes...
+[LOAD] Loading dataset...
+[SETUP] Reconstructing cluster state for heuristic null scores...
+[RUN] Starting null tau estimation for selectivity=0.001000 into /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p001
+[RUN] sel=0.001000 | 200/10000 queries | elapsed=2.22s | provisional Q99s: true=0.035678, heuristic=0.087551, tanh=0.029210, pgap=0.000367
+[RUN] sel=0.001000 | 400/10000 queries | elapsed=4.39s | provisional Q99s: true=0.035678, heuristic=0.092971, tanh=0.029630, pgap=0.000367
+[RUN] sel=0.001000 | 600/10000 queries | elapsed=6.55s | provisional Q99s: true=0.040259, heuristic=0.092972, tanh=0.032899, pgap=0.000367
+[RUN] sel=0.001000 | 800/10000 queries | elapsed=8.72s | provisional Q99s: true=0.040237, heuristic=0.093880, tanh=0.032899, pgap=0.000367
+[RUN] sel=0.001000 | 1000/10000 queries | elapsed=10.88s | provisional Q99s: true=0.037144, heuristic=0.094849, tanh=0.032899, pgap=0.000362
+[RUN] sel=0.001000 | 1200/10000 queries | elapsed=13.05s | provisional Q99s: true=0.039119, heuristic=0.094842, tanh=0.032898, pgap=0.000349
+[RUN] sel=0.001000 | 1400/10000 queries | elapsed=15.22s | provisional Q99s: true=0.037607, heuristic=0.094842, tanh=0.032835, pgap=0.000359
+[RUN] sel=0.001000 | 1600/10000 queries | elapsed=17.38s | provisional Q99s: true=0.037118, heuristic=0.094019, tanh=0.032286, pgap=0.000359
+[RUN] sel=0.001000 | 1800/10000 queries | elapsed=19.55s | provisional Q99s: true=0.036662, heuristic=0.094842, tanh=0.031827, pgap=0.000352
+[RUN] sel=0.001000 | 2000/10000 queries | elapsed=21.74s | provisional Q99s: true=0.036131, heuristic=0.095533, tanh=0.031827, pgap=0.000359
+[RUN] sel=0.001000 | 2200/10000 queries | elapsed=23.91s | provisional Q99s: true=0.036662, heuristic=0.095533, tanh=0.032286, pgap=0.000359
+[RUN] sel=0.001000 | 2400/10000 queries | elapsed=26.09s | provisional Q99s: true=0.036243, heuristic=0.095534, tanh=0.032286, pgap=0.000359
+[RUN] sel=0.001000 | 2600/10000 queries | elapsed=28.26s | provisional Q99s: true=0.036662, heuristic=0.095534, tanh=0.032282, pgap=0.000359
+[RUN] sel=0.001000 | 2800/10000 queries | elapsed=30.45s | provisional Q99s: true=0.037118, heuristic=0.095533, tanh=0.032282, pgap=0.000359
+[RUN] sel=0.001000 | 3000/10000 queries | elapsed=32.63s | provisional Q99s: true=0.037602, heuristic=0.095109, tanh=0.031744, pgap=0.000352
+[RUN] sel=0.001000 | 3200/10000 queries | elapsed=34.79s | provisional Q99s: true=0.037597, heuristic=0.095533, tanh=0.032439, pgap=0.000352
+[RUN] sel=0.001000 | 3400/10000 queries | elapsed=36.97s | provisional Q99s: true=0.037609, heuristic=0.095534, tanh=0.031827, pgap=0.000352
+[RUN] sel=0.001000 | 3600/10000 queries | elapsed=39.16s | provisional Q99s: true=0.037118, heuristic=0.095533, tanh=0.031744, pgap=0.000359
+[RUN] sel=0.001000 | 3800/10000 queries | elapsed=41.33s | provisional Q99s: true=0.036662, heuristic=0.095533, tanh=0.031827, pgap=0.000359
+[RUN] sel=0.001000 | 4000/10000 queries | elapsed=43.51s | provisional Q99s: true=0.036643, heuristic=0.095533, tanh=0.032282, pgap=0.000359
+[RUN] sel=0.001000 | 4200/10000 queries | elapsed=45.70s | provisional Q99s: true=0.036410, heuristic=0.095109, tanh=0.032282, pgap=0.000359
+[RUN] sel=0.001000 | 4400/10000 queries | elapsed=47.89s | provisional Q99s: true=0.036410, heuristic=0.095109, tanh=0.031824, pgap=0.000359
+[RUN] sel=0.001000 | 4600/10000 queries | elapsed=50.09s | provisional Q99s: true=0.037118, heuristic=0.095105, tanh=0.032282, pgap=0.000359
+[RUN] sel=0.001000 | 4800/10000 queries | elapsed=52.27s | provisional Q99s: true=0.036710, heuristic=0.095105, tanh=0.032436, pgap=0.000361
+[RUN] sel=0.001000 | 5000/10000 queries | elapsed=54.44s | provisional Q99s: true=0.036710, heuristic=0.095109, tanh=0.032436, pgap=0.000361
+[RUN] sel=0.001000 | 5200/10000 queries | elapsed=56.62s | provisional Q99s: true=0.036710, heuristic=0.095105, tanh=0.032436, pgap=0.000361
+[RUN] sel=0.001000 | 5400/10000 queries | elapsed=58.80s | provisional Q99s: true=0.037118, heuristic=0.094845, tanh=0.032436, pgap=0.000359
+[RUN] sel=0.001000 | 5600/10000 queries | elapsed=60.98s | provisional Q99s: true=0.037608, heuristic=0.094842, tanh=0.032436, pgap=0.000359
+[RUN] sel=0.001000 | 5800/10000 queries | elapsed=63.15s | provisional Q99s: true=0.037608, heuristic=0.094845, tanh=0.032436, pgap=0.000359
+[RUN] sel=0.001000 | 6000/10000 queries | elapsed=65.33s | provisional Q99s: true=0.037607, heuristic=0.095105, tanh=0.032436, pgap=0.000359
+[RUN] sel=0.001000 | 6200/10000 queries | elapsed=67.57s | provisional Q99s: true=0.037592, heuristic=0.094845, tanh=0.032436, pgap=0.000359
+[RUN] sel=0.001000 | 6400/10000 queries | elapsed=69.80s | provisional Q99s: true=0.037592, heuristic=0.095105, tanh=0.032436, pgap=0.000359
+[RUN] sel=0.001000 | 6600/10000 queries | elapsed=72.02s | provisional Q99s: true=0.037592, heuristic=0.095105, tanh=0.032599, pgap=0.000359
+[RUN] sel=0.001000 | 6800/10000 queries | elapsed=74.28s | provisional Q99s: true=0.037607, heuristic=0.095105, tanh=0.032553, pgap=0.000359
+[RUN] sel=0.001000 | 7000/10000 queries | elapsed=76.48s | provisional Q99s: true=0.037118, heuristic=0.094842, tanh=0.032436, pgap=0.000359
+[RUN] sel=0.001000 | 7200/10000 queries | elapsed=78.71s | provisional Q99s: true=0.036960, heuristic=0.094842, tanh=0.032436, pgap=0.000359
+[RUN] sel=0.001000 | 7400/10000 queries | elapsed=80.91s | provisional Q99s: true=0.036708, heuristic=0.094842, tanh=0.032471, pgap=0.000357
+[RUN] sel=0.001000 | 7600/10000 queries | elapsed=83.14s | provisional Q99s: true=0.036960, heuristic=0.094842, tanh=0.032471, pgap=0.000356
+[RUN] sel=0.001000 | 7800/10000 queries | elapsed=85.37s | provisional Q99s: true=0.036960, heuristic=0.094842, tanh=0.032436, pgap=0.000356
+[RUN] sel=0.001000 | 8000/10000 queries | elapsed=87.60s | provisional Q99s: true=0.037116, heuristic=0.094842, tanh=0.032282, pgap=0.000353
+[RUN] sel=0.001000 | 8200/10000 queries | elapsed=89.82s | provisional Q99s: true=0.036960, heuristic=0.094842, tanh=0.032282, pgap=0.000352
+[RUN] sel=0.001000 | 8400/10000 queries | elapsed=92.05s | provisional Q99s: true=0.037463, heuristic=0.094842, tanh=0.032151, pgap=0.000351
+[RUN] sel=0.001000 | 8600/10000 queries | elapsed=94.29s | provisional Q99s: true=0.037463, heuristic=0.094842, tanh=0.032150, pgap=0.000352
+[RUN] sel=0.001000 | 8800/10000 queries | elapsed=96.51s | provisional Q99s: true=0.037116, heuristic=0.094842, tanh=0.032150, pgap=0.000351
+[RUN] sel=0.001000 | 9000/10000 queries | elapsed=98.73s | provisional Q99s: true=0.037607, heuristic=0.094842, tanh=0.032150, pgap=0.000351
+[RUN] sel=0.001000 | 9200/10000 queries | elapsed=100.97s | provisional Q99s: true=0.037463, heuristic=0.094842, tanh=0.032151, pgap=0.000352
+[RUN] sel=0.001000 | 9400/10000 queries | elapsed=103.19s | provisional Q99s: true=0.036960, heuristic=0.094842, tanh=0.032151, pgap=0.000349
+[RUN] sel=0.001000 | 9600/10000 queries | elapsed=105.42s | provisional Q99s: true=0.037116, heuristic=0.094842, tanh=0.032150, pgap=0.000349
+[RUN] sel=0.001000 | 9800/10000 queries | elapsed=107.66s | provisional Q99s: true=0.037116, heuristic=0.094842, tanh=0.032150, pgap=0.000349
+[RUN] sel=0.001000 | 10000/10000 queries | elapsed=109.90s | provisional Q99s: true=0.037463, heuristic=0.094842, tanh=0.032150, pgap=0.000349
+[DONE] sel=0.001000 | Q99 |c_true^null| = 0.037463 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p001/tau_null_sel0p001_q10000_topk100_true.png
+[DONE] sel=0.001000 | Q99 |c_heuristic^null| = 0.094842 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p001/tau_null_sel0p001_q10000_topk100_heuristic.png
+[DONE] sel=0.001000 | Q99 |c_tanh^null| = 0.032150 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p001/tau_null_sel0p001_q10000_topk100_tanh.png
+[DONE] sel=0.001000 | Q99 |c_pgap^null| = 0.000349 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p001/tau_null_sel0p001_q10000_topk100_pgap.png
+[DONE] sel=0.001000 | CSV: /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p001/tau_null_sel0p001_q10000_topk100.csv
+[DONE] sel=0.001000 | Summary: /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p001/tau_null_sel0p001_q10000_topk100.md
+[DONE] sel=0.001000 | Tau convergence plot: /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p001/tau_null_sel0p001_q10000_topk100_tau_convergence.png
+[RUN] Starting null tau estimation for selectivity=0.010000 into /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p01
+[RUN] sel=0.010000 | 200/10000 queries | elapsed=3.91s | provisional Q99s: true=0.030548, heuristic=0.094035, tanh=0.021647, pgap=0.000384
+[RUN] sel=0.010000 | 400/10000 queries | elapsed=7.83s | provisional Q99s: true=0.036863, heuristic=0.094035, tanh=0.024231, pgap=0.000383
+[RUN] sel=0.010000 | 600/10000 queries | elapsed=11.71s | provisional Q99s: true=0.036863, heuristic=0.092981, tanh=0.024511, pgap=0.000408
+[RUN] sel=0.010000 | 800/10000 queries | elapsed=15.60s | provisional Q99s: true=0.034749, heuristic=0.093080, tanh=0.024472, pgap=0.000429
+[RUN] sel=0.010000 | 1000/10000 queries | elapsed=19.50s | provisional Q99s: true=0.033957, heuristic=0.094035, tanh=0.024220, pgap=0.000430
+[RUN] sel=0.010000 | 1200/10000 queries | elapsed=23.39s | provisional Q99s: true=0.033875, heuristic=0.094016, tanh=0.024220, pgap=0.000432
+[RUN] sel=0.010000 | 1400/10000 queries | elapsed=27.27s | provisional Q99s: true=0.033656, heuristic=0.094016, tanh=0.024461, pgap=0.000436
+[RUN] sel=0.010000 | 1600/10000 queries | elapsed=31.13s | provisional Q99s: true=0.032694, heuristic=0.094016, tanh=0.024461, pgap=0.000436
+[RUN] sel=0.010000 | 1800/10000 queries | elapsed=34.99s | provisional Q99s: true=0.031843, heuristic=0.094016, tanh=0.024189, pgap=0.000431
+[RUN] sel=0.010000 | 2000/10000 queries | elapsed=38.85s | provisional Q99s: true=0.031843, heuristic=0.094024, tanh=0.024189, pgap=0.000436
+[RUN] sel=0.010000 | 2200/10000 queries | elapsed=42.70s | provisional Q99s: true=0.031835, heuristic=0.094842, tanh=0.024092, pgap=0.000436
+[RUN] sel=0.010000 | 2400/10000 queries | elapsed=46.56s | provisional Q99s: true=0.031361, heuristic=0.095534, tanh=0.024189, pgap=0.000436
+[RUN] sel=0.010000 | 2600/10000 queries | elapsed=50.42s | provisional Q99s: true=0.031835, heuristic=0.095533, tanh=0.024189, pgap=0.000439
+[RUN] sel=0.010000 | 2800/10000 queries | elapsed=54.28s | provisional Q99s: true=0.031361, heuristic=0.095105, tanh=0.024189, pgap=0.000438
+[RUN] sel=0.010000 | 3000/10000 queries | elapsed=58.15s | provisional Q99s: true=0.030904, heuristic=0.095533, tanh=0.024220, pgap=0.000438
+[RUN] sel=0.010000 | 3200/10000 queries | elapsed=62.01s | provisional Q99s: true=0.030829, heuristic=0.095534, tanh=0.024220, pgap=0.000439
+[RUN] sel=0.010000 | 3400/10000 queries | elapsed=65.87s | provisional Q99s: true=0.030826, heuristic=0.095534, tanh=0.024472, pgap=0.000439
+[RUN] sel=0.010000 | 3600/10000 queries | elapsed=69.73s | provisional Q99s: true=0.030814, heuristic=0.095533, tanh=0.024472, pgap=0.000439
+[RUN] sel=0.010000 | 3800/10000 queries | elapsed=73.61s | provisional Q99s: true=0.030814, heuristic=0.095109, tanh=0.024220, pgap=0.000439
+[RUN] sel=0.010000 | 4000/10000 queries | elapsed=77.49s | provisional Q99s: true=0.030814, heuristic=0.095105, tanh=0.024461, pgap=0.000445
+[RUN] sel=0.010000 | 4200/10000 queries | elapsed=81.36s | provisional Q99s: true=0.030775, heuristic=0.095534, tanh=0.024472, pgap=0.000446
+[RUN] sel=0.010000 | 4400/10000 queries | elapsed=85.23s | provisional Q99s: true=0.030775, heuristic=0.095533, tanh=0.024308, pgap=0.000445
+[RUN] sel=0.010000 | 4600/10000 queries | elapsed=89.10s | provisional Q99s: true=0.030814, heuristic=0.095533, tanh=0.024219, pgap=0.000445
+[RUN] sel=0.010000 | 4800/10000 queries | elapsed=92.96s | provisional Q99s: true=0.030826, heuristic=0.095533, tanh=0.024308, pgap=0.000445
+[RUN] sel=0.010000 | 5000/10000 queries | elapsed=96.83s | provisional Q99s: true=0.030814, heuristic=0.095534, tanh=0.024219, pgap=0.000439
+[RUN] sel=0.010000 | 5200/10000 queries | elapsed=100.71s | provisional Q99s: true=0.030814, heuristic=0.095533, tanh=0.024189, pgap=0.000439
+[RUN] sel=0.010000 | 5400/10000 queries | elapsed=104.58s | provisional Q99s: true=0.030733, heuristic=0.095533, tanh=0.024219, pgap=0.000445
+[RUN] sel=0.010000 | 5600/10000 queries | elapsed=108.46s | provisional Q99s: true=0.030694, heuristic=0.095105, tanh=0.024189, pgap=0.000446
+[RUN] sel=0.010000 | 5800/10000 queries | elapsed=112.33s | provisional Q99s: true=0.030691, heuristic=0.095105, tanh=0.024137, pgap=0.000446
+[RUN] sel=0.010000 | 6000/10000 queries | elapsed=116.20s | provisional Q99s: true=0.030576, heuristic=0.095109, tanh=0.024137, pgap=0.000447
+[RUN] sel=0.010000 | 6200/10000 queries | elapsed=120.07s | provisional Q99s: true=0.030691, heuristic=0.095105, tanh=0.024189, pgap=0.000447
+[RUN] sel=0.010000 | 6400/10000 queries | elapsed=123.95s | provisional Q99s: true=0.030775, heuristic=0.095105, tanh=0.024189, pgap=0.000446
+[RUN] sel=0.010000 | 6600/10000 queries | elapsed=127.82s | provisional Q99s: true=0.030733, heuristic=0.094842, tanh=0.024137, pgap=0.000447
+[RUN] sel=0.010000 | 6800/10000 queries | elapsed=131.70s | provisional Q99s: true=0.030826, heuristic=0.094842, tanh=0.024308, pgap=0.000450
+[RUN] sel=0.010000 | 7000/10000 queries | elapsed=135.57s | provisional Q99s: true=0.030828, heuristic=0.094842, tanh=0.024189, pgap=0.000449
+[RUN] sel=0.010000 | 7200/10000 queries | elapsed=139.45s | provisional Q99s: true=0.030850, heuristic=0.094842, tanh=0.024146, pgap=0.000449
+[RUN] sel=0.010000 | 7400/10000 queries | elapsed=143.32s | provisional Q99s: true=0.030826, heuristic=0.094842, tanh=0.024146, pgap=0.000449
+[RUN] sel=0.010000 | 7600/10000 queries | elapsed=147.19s | provisional Q99s: true=0.030828, heuristic=0.094842, tanh=0.024133, pgap=0.000447
+[RUN] sel=0.010000 | 7800/10000 queries | elapsed=151.08s | provisional Q99s: true=0.030850, heuristic=0.094842, tanh=0.024133, pgap=0.000449
+[RUN] sel=0.010000 | 8000/10000 queries | elapsed=154.96s | provisional Q99s: true=0.030850, heuristic=0.094842, tanh=0.024134, pgap=0.000450
+[RUN] sel=0.010000 | 8200/10000 queries | elapsed=158.85s | provisional Q99s: true=0.031033, heuristic=0.094842, tanh=0.024137, pgap=0.000451
+[RUN] sel=0.010000 | 8400/10000 queries | elapsed=162.73s | provisional Q99s: true=0.031165, heuristic=0.094842, tanh=0.024134, pgap=0.000450
+[RUN] sel=0.010000 | 8600/10000 queries | elapsed=166.62s | provisional Q99s: true=0.031669, heuristic=0.094842, tanh=0.024137, pgap=0.000449
+[RUN] sel=0.010000 | 8800/10000 queries | elapsed=170.50s | provisional Q99s: true=0.031722, heuristic=0.094296, tanh=0.024133, pgap=0.000447
+[RUN] sel=0.010000 | 9000/10000 queries | elapsed=174.38s | provisional Q99s: true=0.031669, heuristic=0.094301, tanh=0.024134, pgap=0.000449
+[RUN] sel=0.010000 | 9200/10000 queries | elapsed=178.27s | provisional Q99s: true=0.031359, heuristic=0.094842, tanh=0.024134, pgap=0.000449
+[RUN] sel=0.010000 | 9400/10000 queries | elapsed=182.15s | provisional Q99s: true=0.031165, heuristic=0.094842, tanh=0.024137, pgap=0.000449
+[RUN] sel=0.010000 | 9600/10000 queries | elapsed=186.05s | provisional Q99s: true=0.031165, heuristic=0.094842, tanh=0.024134, pgap=0.000449
+[RUN] sel=0.010000 | 9800/10000 queries | elapsed=189.95s | provisional Q99s: true=0.031313, heuristic=0.094301, tanh=0.024137, pgap=0.000449
+[RUN] sel=0.010000 | 10000/10000 queries | elapsed=193.87s | provisional Q99s: true=0.031354, heuristic=0.094842, tanh=0.024134, pgap=0.000451
+[DONE] sel=0.010000 | Q99 |c_true^null| = 0.031354 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p01/tau_null_sel0p01_q10000_topk100_true.png
+[DONE] sel=0.010000 | Q99 |c_heuristic^null| = 0.094842 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p01/tau_null_sel0p01_q10000_topk100_heuristic.png
+[DONE] sel=0.010000 | Q99 |c_tanh^null| = 0.024134 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p01/tau_null_sel0p01_q10000_topk100_tanh.png
+[DONE] sel=0.010000 | Q99 |c_pgap^null| = 0.000451 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p01/tau_null_sel0p01_q10000_topk100_pgap.png
+[DONE] sel=0.010000 | CSV: /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p01/tau_null_sel0p01_q10000_topk100.csv
+[DONE] sel=0.010000 | Summary: /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p01/tau_null_sel0p01_q10000_topk100.md
+[DONE] sel=0.010000 | Tau convergence plot: /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p01/tau_null_sel0p01_q10000_topk100_tau_convergence.png
+[RUN] Starting null tau estimation for selectivity=0.100000 into /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p1
+[RUN] sel=0.100000 | 200/10000 queries | elapsed=15.11s | provisional Q99s: true=0.019440, heuristic=0.087431, tanh=0.008438, pgap=0.000975
+[RUN] sel=0.100000 | 400/10000 queries | elapsed=30.21s | provisional Q99s: true=0.019960, heuristic=0.092977, tanh=0.008419, pgap=0.000974
+[RUN] sel=0.100000 | 600/10000 queries | elapsed=45.30s | provisional Q99s: true=0.022271, heuristic=0.093621, tanh=0.009313, pgap=0.001092
+[RUN] sel=0.100000 | 800/10000 queries | elapsed=60.40s | provisional Q99s: true=0.023597, heuristic=0.095109, tanh=0.008837, pgap=0.000992
+[RUN] sel=0.100000 | 1000/10000 queries | elapsed=75.50s | provisional Q99s: true=0.023217, heuristic=0.093883, tanh=0.009313, pgap=0.001091
+[RUN] sel=0.100000 | 1200/10000 queries | elapsed=90.60s | provisional Q99s: true=0.025298, heuristic=0.093883, tanh=0.009068, pgap=0.001015
+[RUN] sel=0.100000 | 1400/10000 queries | elapsed=105.69s | provisional Q99s: true=0.026820, heuristic=0.094845, tanh=0.008953, pgap=0.001015
+[RUN] sel=0.100000 | 1600/10000 queries | elapsed=120.78s | provisional Q99s: true=0.025988, heuristic=0.094024, tanh=0.008953, pgap=0.001015
+[RUN] sel=0.100000 | 1800/10000 queries | elapsed=135.86s | provisional Q99s: true=0.025988, heuristic=0.093871, tanh=0.009067, pgap=0.001039
+[RUN] sel=0.100000 | 2000/10000 queries | elapsed=150.95s | provisional Q99s: true=0.025988, heuristic=0.093871, tanh=0.008952, pgap=0.000991
+[RUN] sel=0.100000 | 2200/10000 queries | elapsed=166.04s | provisional Q99s: true=0.025988, heuristic=0.093871, tanh=0.008952, pgap=0.000991
+[RUN] sel=0.100000 | 2400/10000 queries | elapsed=181.13s | provisional Q99s: true=0.026178, heuristic=0.093871, tanh=0.009125, pgap=0.001015
+[RUN] sel=0.100000 | 2600/10000 queries | elapsed=196.22s | provisional Q99s: true=0.025576, heuristic=0.093871, tanh=0.009067, pgap=0.001015
+[RUN] sel=0.100000 | 2800/10000 queries | elapsed=211.31s | provisional Q99s: true=0.025285, heuristic=0.093871, tanh=0.009125, pgap=0.001015
+[RUN] sel=0.100000 | 3000/10000 queries | elapsed=226.40s | provisional Q99s: true=0.025285, heuristic=0.093871, tanh=0.008967, pgap=0.001015
+[RUN] sel=0.100000 | 3200/10000 queries | elapsed=241.50s | provisional Q99s: true=0.025285, heuristic=0.093871, tanh=0.009125, pgap=0.001015
+[RUN] sel=0.100000 | 3400/10000 queries | elapsed=256.60s | provisional Q99s: true=0.025892, heuristic=0.093621, tanh=0.009194, pgap=0.001034
+[RUN] sel=0.100000 | 3600/10000 queries | elapsed=271.69s | provisional Q99s: true=0.025575, heuristic=0.093872, tanh=0.009125, pgap=0.001034
+[RUN] sel=0.100000 | 3800/10000 queries | elapsed=286.79s | provisional Q99s: true=0.025265, heuristic=0.094296, tanh=0.009125, pgap=0.001034
+[RUN] sel=0.100000 | 4000/10000 queries | elapsed=301.90s | provisional Q99s: true=0.025285, heuristic=0.094019, tanh=0.009095, pgap=0.001015
+[RUN] sel=0.100000 | 4200/10000 queries | elapsed=316.99s | provisional Q99s: true=0.025833, heuristic=0.094016, tanh=0.009095, pgap=0.001020
+[RUN] sel=0.100000 | 4400/10000 queries | elapsed=332.09s | provisional Q99s: true=0.025574, heuristic=0.094016, tanh=0.009067, pgap=0.001015
+[RUN] sel=0.100000 | 4600/10000 queries | elapsed=347.18s | provisional Q99s: true=0.025285, heuristic=0.094016, tanh=0.009067, pgap=0.001015
+[RUN] sel=0.100000 | 4800/10000 queries | elapsed=362.28s | provisional Q99s: true=0.025265, heuristic=0.094016, tanh=0.009095, pgap=0.001012
+[RUN] sel=0.100000 | 5000/10000 queries | elapsed=377.38s | provisional Q99s: true=0.025265, heuristic=0.094016, tanh=0.009201, pgap=0.001039
+[RUN] sel=0.100000 | 5200/10000 queries | elapsed=392.49s | provisional Q99s: true=0.025182, heuristic=0.094016, tanh=0.009224, pgap=0.001039
+[RUN] sel=0.100000 | 5400/10000 queries | elapsed=407.58s | provisional Q99s: true=0.025158, heuristic=0.093872, tanh=0.009247, pgap=0.001039
+[RUN] sel=0.100000 | 5600/10000 queries | elapsed=422.69s | provisional Q99s: true=0.025182, heuristic=0.093871, tanh=0.009299, pgap=0.001039
+[RUN] sel=0.100000 | 5800/10000 queries | elapsed=437.79s | provisional Q99s: true=0.025285, heuristic=0.094016, tanh=0.009247, pgap=0.001038
+[RUN] sel=0.100000 | 6000/10000 queries | elapsed=452.90s | provisional Q99s: true=0.025265, heuristic=0.093872, tanh=0.009247, pgap=0.001038
+[RUN] sel=0.100000 | 6200/10000 queries | elapsed=468.00s | provisional Q99s: true=0.025265, heuristic=0.093871, tanh=0.009224, pgap=0.001035
+[RUN] sel=0.100000 | 6400/10000 queries | elapsed=483.11s | provisional Q99s: true=0.025158, heuristic=0.094016, tanh=0.009247, pgap=0.001035
+[RUN] sel=0.100000 | 6600/10000 queries | elapsed=498.22s | provisional Q99s: true=0.025045, heuristic=0.094016, tanh=0.009247, pgap=0.001035
+[RUN] sel=0.100000 | 6800/10000 queries | elapsed=513.33s | provisional Q99s: true=0.024932, heuristic=0.094016, tanh=0.009225, pgap=0.001034
+[RUN] sel=0.100000 | 7000/10000 queries | elapsed=528.43s | provisional Q99s: true=0.024913, heuristic=0.094016, tanh=0.009201, pgap=0.001022
+[RUN] sel=0.100000 | 7200/10000 queries | elapsed=543.54s | provisional Q99s: true=0.025158, heuristic=0.094016, tanh=0.009224, pgap=0.001030
+[RUN] sel=0.100000 | 7400/10000 queries | elapsed=558.65s | provisional Q99s: true=0.025158, heuristic=0.094016, tanh=0.009224, pgap=0.001022
+[RUN] sel=0.100000 | 7600/10000 queries | elapsed=573.76s | provisional Q99s: true=0.025182, heuristic=0.094016, tanh=0.009224, pgap=0.001020
+[RUN] sel=0.100000 | 7800/10000 queries | elapsed=588.87s | provisional Q99s: true=0.025265, heuristic=0.094019, tanh=0.009224, pgap=0.001020
+[RUN] sel=0.100000 | 8000/10000 queries | elapsed=604.00s | provisional Q99s: true=0.025265, heuristic=0.094296, tanh=0.009201, pgap=0.001020
+[RUN] sel=0.100000 | 8200/10000 queries | elapsed=619.12s | provisional Q99s: true=0.025158, heuristic=0.094301, tanh=0.009194, pgap=0.001015
+[RUN] sel=0.100000 | 8400/10000 queries | elapsed=634.22s | provisional Q99s: true=0.025045, heuristic=0.094301, tanh=0.009201, pgap=0.001020
+[RUN] sel=0.100000 | 8600/10000 queries | elapsed=649.33s | provisional Q99s: true=0.025045, heuristic=0.094296, tanh=0.009224, pgap=0.001020
+[RUN] sel=0.100000 | 8800/10000 queries | elapsed=664.44s | provisional Q99s: true=0.025045, heuristic=0.094296, tanh=0.009225, pgap=0.001020
+[RUN] sel=0.100000 | 9000/10000 queries | elapsed=679.55s | provisional Q99s: true=0.025045, heuristic=0.094842, tanh=0.009225, pgap=0.001020
+[RUN] sel=0.100000 | 9200/10000 queries | elapsed=694.67s | provisional Q99s: true=0.024964, heuristic=0.094301, tanh=0.009201, pgap=0.001015
+[RUN] sel=0.100000 | 9400/10000 queries | elapsed=709.79s | provisional Q99s: true=0.024932, heuristic=0.094842, tanh=0.009224, pgap=0.001020
+[RUN] sel=0.100000 | 9600/10000 queries | elapsed=724.90s | provisional Q99s: true=0.025141, heuristic=0.094842, tanh=0.009224, pgap=0.001020
+[RUN] sel=0.100000 | 9800/10000 queries | elapsed=740.05s | provisional Q99s: true=0.025265, heuristic=0.094842, tanh=0.009224, pgap=0.001020
+[RUN] sel=0.100000 | 10000/10000 queries | elapsed=755.23s | provisional Q99s: true=0.025158, heuristic=0.094842, tanh=0.009194, pgap=0.001015
+[DONE] sel=0.100000 | Q99 |c_true^null| = 0.025158 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p1/tau_null_sel0p1_q10000_topk100_true.png
+[DONE] sel=0.100000 | Q99 |c_heuristic^null| = 0.094842 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p1/tau_null_sel0p1_q10000_topk100_heuristic.png
+[DONE] sel=0.100000 | Q99 |c_tanh^null| = 0.009194 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p1/tau_null_sel0p1_q10000_topk100_tanh.png
+[DONE] sel=0.100000 | Q99 |c_pgap^null| = 0.001015 | plot=/users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p1/tau_null_sel0p1_q10000_topk100_pgap.png
+[DONE] sel=0.100000 | CSV: /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p1/tau_null_sel0p1_q10000_topk100.csv
+[DONE] sel=0.100000 | Summary: /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p1/tau_null_sel0p1_q10000_topk100.md
+[DONE] sel=0.100000 | Tau convergence plot: /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p1/tau_null_sel0p1_q10000_topk100_tau_convergence.png
+[RUN] Starting null tau estimation for selectivity=0.500000 into /users/maadam/filtered-vector-search/src/out/tau_null_reports/experiment1/sel0p5
+[RUN] sel=0.500000 | 200/10000 queries | elapsed=65.24s | provisional Q99s: true=0.013491, heuristic=0.088559, tanh=0.002973, pgap=0.001504
+[RUN] sel=0.500000 | 400/10000 queries | elapsed=130.35s | provisional Q99s: true=0.016254, heuristic=0.093000, tanh=0.003047, pgap=0.001550
+[RUN] sel=0.500000 | 600/10000 queries | elapsed=195.50s | provisional Q99s: true=0.015899, heuristic=0.095986, tanh=0.003052, pgap=0.001585
+[RUN] sel=0.500000 | 800/10000 queries | elapsed=260.64s | provisional Q99s: true=0.016239, heuristic=0.095920, tanh=0.003052, pgap=0.001585
+[RUN] sel=0.500000 | 1000/10000 queries | elapsed=325.78s | provisional Q99s: true=0.016238, heuristic=0.095113, tanh=0.003191, pgap=0.001659
+[RUN] sel=0.500000 | 1200/10000 queries | elapsed=390.92s | provisional Q99s: true=0.016342, heuristic=0.095537, tanh=0.003191, pgap=0.001659
+[RUN] sel=0.500000 | 1400/10000 queries | elapsed=456.08s | provisional Q99s: true=0.016345, heuristic=0.095537, tanh=0.003191, pgap=0.001659
+[RUN] sel=0.500000 | 1600/10000 queries | elapsed=521.29s | provisional Q99s: true=0.016410, heuristic=0.095920, tanh=0.003191, pgap=0.001659
+[RUN] sel=0.500000 | 1800/10000 queries | elapsed=586.48s | provisional Q99s: true=0.016410, heuristic=0.095109, tanh=0.003166, pgap=0.001623
+[RUN] sel=0.500000 | 2000/10000 queries | elapsed=651.69s | provisional Q99s: true=0.017474, heuristic=0.095533, tanh=0.003284, pgap=0.001670
+[RUN] sel=0.500000 | 2200/10000 queries | elapsed=717.10s | provisional Q99s: true=0.017432, heuristic=0.095105, tanh=0.003203, pgap=0.001668
+[RUN] sel=0.500000 | 2400/10000 queries | elapsed=782.54s | provisional Q99s: true=0.016487, heuristic=0.095105, tanh=0.003249, pgap=0.001668
+[RUN] sel=0.500000 | 2600/10000 queries | elapsed=847.87s | provisional Q99s: true=0.016410, heuristic=0.094845, tanh=0.003225, pgap=0.001639
+[RUN] sel=0.500000 | 2800/10000 queries | elapsed=913.02s | provisional Q99s: true=0.016485, heuristic=0.094842, tanh=0.003202, pgap=0.001633
+[RUN] sel=0.500000 | 3000/10000 queries | elapsed=978.24s | provisional Q99s: true=0.016515, heuristic=0.094019, tanh=0.003191, pgap=0.001624
+[RUN] sel=0.500000 | 3200/10000 queries | elapsed=1043.48s | provisional Q99s: true=0.016515, heuristic=0.094845, tanh=0.003225, pgap=0.001655
+[RUN] sel=0.500000 | 3400/10000 queries | elapsed=1108.68s | provisional Q99s: true=0.016746, heuristic=0.094845, tanh=0.003259, pgap=0.001659
+[RUN] sel=0.500000 | 3600/10000 queries | elapsed=1173.86s | provisional Q99s: true=0.016515, heuristic=0.094842, tanh=0.003225, pgap=0.001655
+[RUN] sel=0.500000 | 3800/10000 queries | elapsed=1239.00s | provisional Q99s: true=0.016746, heuristic=0.094842, tanh=0.003202, pgap=0.001639
+[RUN] sel=0.500000 | 4000/10000 queries | elapsed=1304.15s | provisional Q99s: true=0.017432, heuristic=0.094842, tanh=0.003259, pgap=0.001659
+[RUN] sel=0.500000 | 4200/10000 queries | elapsed=1369.35s | provisional Q99s: true=0.017473, heuristic=0.094842, tanh=0.003259, pgap=0.001659
+[RUN] sel=0.500000 | 4400/10000 queries | elapsed=1434.57s | provisional Q99s: true=0.017432, heuristic=0.094842, tanh=0.003284, pgap=0.001668
+[RUN] sel=0.500000 | 4600/10000 queries | elapsed=1499.76s | provisional Q99s: true=0.017351, heuristic=0.094842, tanh=0.003284, pgap=0.001668
+[RUN] sel=0.500000 | 4800/10000 queries | elapsed=1565.13s | provisional Q99s: true=0.017432, heuristic=0.094842, tanh=0.003259, pgap=0.001659

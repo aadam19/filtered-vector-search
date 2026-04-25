@@ -1,0 +1,25 @@
+# Tau Estimation Summary
+
+- Input: `src/out/experiment9/correlation_comparison_0p01.csv`
+- Metric: `heuristic`
+- Objective: `balanced_accuracy`
+- Estimated tau: `0.104385`
+- Accuracy at tau: `0.9667`
+- Balanced accuracy at tau: `0.9667`
+- Macro F1 at tau: `0.9666`
+
+## Class Distribution
+
+| Class | Count | Mean | Median | Q10 | Q25 | Q75 | Q90 | Min | Max |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| negative | 10 | -0.323272 | -0.330754 | -0.380971 | -0.345100 | -0.284454 | -0.274636 | -0.433849 | -0.223896 |
+| random | 10 | 0.053448 | 0.085494 | -0.085775 | 0.061179 | 0.100860 | 0.103720 | -0.088520 | 0.103720 |
+| positive | 10 | 0.256426 | 0.305866 | 0.168083 | 0.281318 | 0.345100 | 0.380971 | -0.334231 | 0.433849 |
+
+## Confusion Matrix at Estimated Tau
+
+| Actual \ Predicted | Negative | Random | Positive |
+|---|---:|---:|---:|
+| negative | 10 | 0 | 0 |
+| random | 0 | 10 | 0 |
+| positive | 1 | 0 | 9 |
